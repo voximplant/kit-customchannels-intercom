@@ -12,10 +12,16 @@ use Psr\Log\NullLogger;
 require 'vendor/autoload.php';
 require __DIR__ . '/config.php';
 
-//Generate JWT Access token for messaging
 $service->login();
+try {
+    //Generate JWT Access token for messaging
+    $service->login();
+} catch (Exception $exception) {
+    $logger->error('Failed to login in voximplant kit messaging', ['message' => $exception->getMessage(), 'code' => $exception->getCode()]);
+    throw $exception;
+}
 
-Amp\Loop::run(function () use ($service) {
+Amp\Loop::run(function () use ($service, $logger) {
     $sockets = [
         Server::listen("0.0.0.0:1338"),
         Server::listen("[::]:1338"),
@@ -23,24 +29,35 @@ Amp\Loop::run(function () use ($service) {
     $router = new Router;
 
     // Handler for intercom events
-    $router->addRoute('POST', '/intercom-incoming', new CallableRequestHandler(function(Request $request) use ($service) {
+    $router->addRoute('POST', '/intercom-incoming', new CallableRequestHandler(function(Request $request) use ($service, $logger) {
         $buffer = '';
         while (($chunk = yield $request->getBody()->read()) !== null) {
             $buffer .= $chunk;
         }
-        $service->handleIntercomEvent($buffer);
+        try {
+
+            $service->handleIntercomEvent($buffer);
+        } catch (Exception $exception) {
+            $logger->error('Failed to handle intercom event', ['message' => $exception->getMessage(), 'code' => $exception->getCode()]);
+            throw $exception;
+        }
         return new Response(Status::OK, [
             "content-type" => "text/plain; charset=utf-8"
         ], "OK");
     }));
 
     // Handler for Voximplant kit events
-    $router->addRoute('POST', '/kit-incoming', new CallableRequestHandler(function (Request $request) use ($service) {
+    $router->addRoute('POST', '/kit-incoming', new CallableRequestHandler(function (Request $request) use ($service, $logger) {
         $buffer = '';
         while (($chunk = yield $request->getBody()->read()) !== null) {
             $buffer .= $chunk;
         }
-        $service->handleKitEvent($buffer);
+        try {
+            $service->handleKitEvent($buffer);
+        } catch (Exception $exception) {
+            $logger->error('Failed to handle voximplant kit event', ['message' => $exception->getMessage(), 'code' => $exception->getCode()]);
+            throw $exception;
+        }
         return new Response(Status::OK, [
             "content-type" => "text/plain; charset=utf-8"
         ], "OK");
