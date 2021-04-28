@@ -12,7 +12,6 @@ use Psr\Log\NullLogger;
 require 'vendor/autoload.php';
 require __DIR__ . '/config.php';
 
-$service->login();
 try {
     //Generate JWT Access token for messaging
     $service->login();
