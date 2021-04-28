@@ -1,0 +1,9 @@
+
+.idea
+*.local
+*.log
+
+cache
+vendor/
+
+
