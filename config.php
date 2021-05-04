@@ -26,7 +26,7 @@ $cache = new FilesystemCachePool($filesystem);
 
 //Configuration for Voximplant Kit API client
 $kitConfig = new Configuration();
-$kitConfig->setHost($_ENV['KIT_API_URL']);
+$kitConfig->setHost($_ENV['KIT_IM_API_URL']);
 $kitConfig->setApiKey('domain', $_ENV['KIT_ACCOUNT_NAME']);
 $kitConfig->setApiKey('access_token', $_ENV['KIT_API_TOKEN']);
 

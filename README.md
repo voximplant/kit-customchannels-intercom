@@ -4,7 +4,7 @@ An example of integrating Intercom with Voximplant KIT using a custom channel
 
 Configure your credentials in [./env](.env) file:
 
-* KIT_API_URL: KIT Api url by your region. https://kitapi-eu.voximplant.com/api/v3 or https://kitapi-us.voximplant.com/api/v3);
+* KIT_IM_API_URL: KIT Api url by your region. https://kit-im-eu.voximplant.com or https://kit-im-us.voximplant.com);
 * KIT_ACCOUNT_NAME: Your account name in Voximplant KIT;
 * KIT_API_TOKEN: Your api token in Voximplant KIT;
 * KIT_CHANNEL_UUID: Your custom channel uuid in Voximplant KIT;
