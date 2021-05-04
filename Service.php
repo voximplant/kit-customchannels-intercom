@@ -4,19 +4,19 @@ namespace Intercom;
 
 use Exception;
 use Psr\Log\LoggerInterface;
-use VoximplantKit\Model\MessagingEventMessageType;
-use VoximplantKit\Model\MessagingIncomingEventType;
-use VoximplantKit\Model\MessagingIncomingEventTypeClientData;
-use VoximplantKit\Model\MessagingIncomingEventTypeEventData;
+use VoximplantKitIM\Model\MessagingEventMessageType;
+use VoximplantKitIM\Model\MessagingIncomingEventType;
+use VoximplantKitIM\Model\MessagingIncomingEventTypeClientData;
+use VoximplantKitIM\Model\MessagingIncomingEventTypeEventData;
 use Ramsey\Uuid\Uuid;
-use VoximplantKit\Model\MessagingOutgoingChatCloseEventType;
-use VoximplantKit\Model\MessagingOutgoingNewMessageEventType;
-use VoximplantKit\ObjectSerializer;
-use VoximplantKit\VoximplantKitClient;
+use VoximplantKitIM\Model\MessagingOutgoingChatCloseEventType;
+use VoximplantKitIM\Model\MessagingOutgoingNewMessageEventType;
+use VoximplantKitIM\ObjectSerializer;
+use VoximplantKitIM\VoximplantKitIMClient;
 
 class Service
 {
-    /** @var VoximplantKitClient */
+    /** @var VoximplantKitIMClient */
     private $kit;
 
     /** @var Repository */
@@ -38,7 +38,7 @@ class Service
      */
     private $logger;
 
-    public function __construct(IntercomClient $intercom, Repository $repository, VoximplantKitClient $kit, LoggerInterface $logger, string $channelUUID, int $intercomAdminId)
+    public function __construct(IntercomClient $intercom, Repository $repository, VoximplantKitIMClient $kit, LoggerInterface $logger, string $channelUUID, int $intercomAdminId)
     {
         $this->kit = $kit;
         $this->repository = $repository;

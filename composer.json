@@ -10,12 +10,12 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/voximplant/kit-apiclient-php.git"
+            "url": "https://github.com/voximplant/kit-imclient-php"
         }
     ],
     "require": {
         "guzzlehttp/guzzle": "^6.2",
-        "voximplant/kit-apiclient-php": "*",
+        "voximplant/kit-imclient-php": "*",
         "ramsey/uuid": "^4.1",
         "firebase/php-jwt": "^5.2",
         "amphp/http-server": "^2.1",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "816014270fd7db988eac469094bbb55c",
+    "content-hash": "eb80e169f8ab95abc96d2c55b17e0925",
     "packages": [
         {
             "name": "amphp/amp",
@@ -2213,16 +2213,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -2246,7 +2246,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -2256,7 +2256,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2020-03-23T09:12:05+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -2952,12 +2952,12 @@
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
-            "name": "voximplant/kit-apiclient-php",
-            "version": "v1.0.2",
+            "name": "voximplant/kit-imclient-php",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/voximplant/kit-apiclient-php.git",
-                "reference": "15c3c2b444a51ea5f71dfca97f7f6ea2b423d8b0"
+                "url": "https://github.com/voximplant/kit-imclient-php",
+                "reference": "10193a90fa89186470ea1316e6e9c86b6bd318af"
             },
             "require": {
                 "ext-curl": "*",
@@ -2974,12 +2974,12 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "VoximplantKit\\": "lib/"
+                    "VoximplantKitIM\\": "lib/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "VoximplantKit\\": "test/"
+                    "VoximplantKitIM\\": "test/"
                 }
             },
             "license": [
@@ -2998,7 +2998,7 @@
                 "sdk",
                 "swagger"
             ],
-            "time": "2021-04-28T08:10:39+00:00"
+            "time": "2021-05-04T13:04:05+00:00"
         }
     ],
     "packages-dev": [],

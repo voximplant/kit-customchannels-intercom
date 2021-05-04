@@ -6,7 +6,7 @@ use Intercom\IntercomClient;
 use Intercom\Repository;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
-use VoximplantKit\Configuration;
+use VoximplantKitIM\Configuration;
 use Symfony\Component\Dotenv\Dotenv;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -30,7 +30,7 @@ $kitConfig->setHost($_ENV['KIT_API_URL']);
 $kitConfig->setApiKey('domain', $_ENV['KIT_ACCOUNT_NAME']);
 $kitConfig->setApiKey('access_token', $_ENV['KIT_API_TOKEN']);
 
-$kit = new VoximplantKit\VoximplantKitClient($kitConfig);
+$kit = new VoximplantKitIM\VoximplantKitIMClient($kitConfig);
 
 //Configuration for Intercom API client
 $intercomToken = $_ENV['INTERCOM_API_TOKEN'];
